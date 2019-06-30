@@ -1,6 +1,4 @@
-﻿// ArpScanner.cpp : 定义控制台应用程序的入口点。
-//
-
+﻿#define HAVE_REMOTE
 #include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>
@@ -10,7 +8,16 @@
 #include <process.h>
 #include <stdio.h>
 #include <string>
-
+#include "pcap.h"
+#include "remote-ext.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <pcap.h> 
+#include <remote-ext.h>        //winpcap的头文件
+#include <winsock2.h>
+#include <process.h>              //多线程编程的头文件
+#include <windows.h>
+#include <Iphlpapi.h>   
 using namespace std;
 #pragma comment(lib, "wpcap.lib")
 #pragma comment(lib, "Packet.lib")
@@ -355,4 +362,3 @@ int main()
 	CloseHandle(mThread);
 	return 0;
 }
-
